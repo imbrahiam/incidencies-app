@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "seguridad_20222034",
+    "slug": "incidenciasapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.brahiam.incidenciasapp"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "permissions": [
+            "CAMERA",
+            "CAMERA_ROLL"
+          ]
+        }
+      ],
+      [
+        "expo-document-picker"
+      ],
+      [
+        "expo-av"
+      ],
+      [
+        "expo-sqlite"
+      ]
+    ]
+  }
+}
