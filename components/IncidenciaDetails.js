@@ -59,19 +59,26 @@ const IncidenciaDetail = ({ route }) => {
         <Text style={styles.title}>{incidencia.titulo}</Text>
         <Text style={styles.date}>{formatDate(incidencia.fecha)}</Text>
         <Text style={styles.description}>{incidencia.descripcion}</Text>
-        <TouchableOpacity onPress={playPauseAudio} style={styles.button}>
-          <Text style={styles.buttonText}>{isPlaying ? 'Pausar Audio' : 'Reproducir Audio'}</Text>
-        </TouchableOpacity>
-        <View style={styles.volumeContainer}>
-          <Text style={styles.volumeText}>Volumen</Text>
-          <Slider
-            style={styles.slider}
-            minimumValue={0}
-            maximumValue={1}
-            value={volume}
-            onValueChange={changeVolume}
-          />
-        </View>
+
+        {incidencia.audio ? (
+          <>
+            <TouchableOpacity onPress={playPauseAudio} style={styles.button}>
+              <Text style={styles.buttonText}>
+                {isPlaying ? 'Pausar Audio' : 'Reproducir Audio'}
+              </Text>
+            </TouchableOpacity>
+            <View style={styles.volumeContainer}>
+              <Text style={styles.volumeText}>Volumen</Text>
+              <Slider
+                style={styles.slider}
+                minimumValue={0}
+                maximumValue={1}
+                value={volume}
+                onValueChange={changeVolume}
+              />
+            </View>
+          </>
+        ) : null}
       </View>
     </View>
   );
